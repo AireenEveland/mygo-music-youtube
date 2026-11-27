@@ -1,0 +1,12 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Local tooling
+node_modules/
+*.log
+
+# Never commit credentials or local backups
+.env
+.env.*
+*.local

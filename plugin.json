@@ -1,0 +1,70 @@
+{
+  "id": "youtube",
+  "name": "YouTube",
+  "version": "0.1.0",
+  "minAppVersion": "0.1.21",
+  "main": "index.js",
+  "playback": "stream",
+  "permissions": {
+    "network": [
+      "www.youtube.com",
+      "*.youtube.com",
+      "suggestqueries.google.com",
+      "*.googlevideo.com"
+    ],
+    "process": [
+      "ffmpeg",
+      "yt-dlp",
+      "deno",
+      "node",
+      "bun",
+      "/opt/homebrew/bin/ffmpeg",
+      "/opt/homebrew/bin/yt-dlp",
+      "/opt/homebrew/bin/deno",
+      "/opt/homebrew/bin/node",
+      "/opt/homebrew/bin/bun",
+      "/usr/local/bin/ffmpeg",
+      "/usr/local/bin/yt-dlp",
+      "/usr/local/bin/deno",
+      "/usr/local/bin/node",
+      "/usr/local/bin/bun"
+    ]
+  },
+  "settings": [
+    {
+      "key": "manualCookie",
+      "label": "Cookie (optional)",
+      "help": "If the sign-in window cannot open, paste the Cookie header of a signed-in youtube.com tab here instead.",
+      "type": "password"
+    },
+    {
+      "key": "audioClient",
+      "label": "Audio source",
+      "help": "How the audio address is found. Automatic tries the Vision Pro player, then your signed-in web player, then yt-dlp if it is installed.",
+      "type": "select",
+      "options": [
+        { "value": "", "label": "Automatic" },
+        { "value": "visionos", "label": "Vision Pro player" },
+        { "value": "web", "label": "Signed-in web player" }
+      ]
+    },
+    {
+      "key": "reportPlayback",
+      "label": "Report plays to YouTube",
+      "help": "When signed in, tell YouTube once that you started a video. It goes into your watch history and may count as a view. One honest report per play, never a way to inflate views. Turn off to keep listening out of your history.",
+      "type": "select",
+      "options": [
+        { "value": "on", "label": "Report plays" },
+        { "value": "off", "label": "Don't report" }
+      ]
+    }
+  ],
+  "navigation": [
+    { "builtin": "home" },
+    { "title": "Subscriptions", "page": "subscriptions", "icon": "artist" },
+    { "title": "Playlists", "page": "playlists", "icon": "playlist" },
+    { "title": "Watch Later", "page": "watchlater", "icon": "star" },
+    { "title": "History", "page": "history", "icon": "calendar" },
+    { "title": "Liked Videos", "builtin": "liked" }
+  ]
+}

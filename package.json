@@ -1,0 +1,15 @@
+{
+  "name": "mygo-music-youtube",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "description": "A MyGo Music plugin for your own YouTube account. Plays through ffmpeg, with yt-dlp as an optional fallback.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check index.js",
+    "test": "node --experimental-vm-modules --test tests/*.test.mjs"
+  }
+}
